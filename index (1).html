@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ethan Rajeswaran — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #EDEFEA;   /* cool drafting-paper grey */
+      --ink: #1A222D;     /* main text */
+      --muted: #56616E;   /* secondary text */
+      --teal: #1F5D63;    /* links */
+      --mark: #E8B21E;    /* viewfinder / registration marks */
+      --rule: #C9CEC6;    /* thin lines */
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.125rem;
+      line-height: 1.65;
+    }
+    a { color: var(--teal); text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid var(--mark); outline-offset: 3px; }
+    .wrap { max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ---------- Hero: name inside viewfinder marks ---------- */
+    .hero { padding: 5rem 0 4rem; }
+    .frame { position: relative; padding: 2.5rem 2rem; }
+    .frame::before, .frame::after,
+    .frame span.c1, .frame span.c2 {
+      content: ""; position: absolute; width: 28px; height: 28px;
+      border: 0 solid var(--mark);
+    }
+    .frame::before { top: 0; left: 0; border-top-width: 4px; border-left-width: 4px; }
+    .frame::after  { top: 0; right: 0; border-top-width: 4px; border-right-width: 4px; }
+    .frame span.c1 { bottom: 0; left: 0; border-bottom-width: 4px; border-left-width: 4px; }
+    .frame span.c2 { bottom: 0; right: 0; border-bottom-width: 4px; border-right-width: 4px; }
+    h1 {
+      font-family: "Archivo", Arial, sans-serif;
+      font-stretch: 125%; font-weight: 800;
+      font-size: clamp(2.4rem, 8vw, 4.25rem);
+      line-height: 1.02; letter-spacing: -0.01em;
+    }
+    .tagline { margin-top: 1rem; color: var(--muted); max-width: 32rem; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 2.5rem 0; border-top: 1px solid var(--rule); }
+    h2 {
+      font-family: "Archivo", Arial, sans-serif;
+      font-stretch: 100%; font-weight: 700; font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-family: "Archivo", Arial, sans-serif;
+      font-weight: 700; font-size: 1.2rem;
+    }
+    p + p { margin-top: 0.9rem; }
+
+    /* Projects: simple list, not cards */
+    .project { padding: 1.25rem 0 1.25rem 1.25rem; border-left: 3px solid var(--rule); }
+    .project + .project { margin-top: 1rem; }
+    .status { font-size: 0.95rem; color: var(--muted); font-style: italic; }
+    .project p { margin-top: 0.4rem; }
+    .links { margin-top: 0.5rem; font-size: 1rem; }
+
+    footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--rule); }
+
+    @media (max-width: 480px) {
+      .hero { padding: 3rem 0 2.5rem; }
+      .frame { padding: 1.75rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- HERO: your name and one-line intro -->
+    <header class="hero">
+      <div class="frame">
+        <span class="c1"></span><span class="c2"></span>
+        <h1>Ethan Rajeswaran</h1>
+        <p class="tagline">Aspiring engineer, building toward first-year engineering and finding where engineering meets filmmaking.</p>
+      </div>
+    </header>
+
+    <!-- ABOUT: edit this to sound like you -->
+    <section id="about">
+      <h2>About me</h2>
+      <p>I'm spending my p year preparing for university engineering and working on projects that let me build real things. I'm especially interested in using engineering for film, like designing and 3D printing set pieces.</p>
+      <p>Right now I'm learning Java, Python, HTML/CSS.</p>
+    </section>
+
+    <!-- PROJECTS: copy a <div class="project"> block to add another one -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Roomies</h3>
+        <p class="status">In progress</p>
+        <p>An app that helps roommates and dorm residents share chores and responsibilities, and report maintenance issues to landlords or residence RAs.</p>
+        <p class="links"><a href="https://github.com/EthanRajeswaran/roomies">View code on GitHub</a></p>
+      </div>
+
+      <div class="project">
+        <h3>3D-printed film set pieces</h3>
+        <p class="status">Ongoing</p>
+        <p>[Describe one piece you designed: what it was for, the software you modelled it in, and one problem you solved while printing it.]</p>
+        <p class="links"><a href="#">Add a photo or link</a></p>
+      </div>
+
+      <div class="project">
+        <h3>[Your next project]</h3>
+        <p class="status">[Status]</p>
+        <p>[What it does, why you built it, and what you used to build it.]</p>
+        <p class="links"><a href="#">View code on GitHub</a></p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email me at <a href="mailto:ethanrajeswaran8@gmail.com">ethanrajeswaran8@gmail.com</a> or find my code on <a href="https://github.com/YOUR-USERNAME">GitHub</a>.</p>
+    </section>
+
+  </main>
+  <footer class="wrap">Built by Ethan Rajeswaran and hosted on GitHub Pages.</footer>
+</body>
+</html>
