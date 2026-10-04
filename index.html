@@ -90,23 +90,6 @@
     }
   </style>
 </head>
-    <script>
-    const btn = document.getElementById("themeBtn");
-    const page = document.documentElement;
-
-    function setTheme(theme) {
-      page.setAttribute("data-theme", theme);
-      btn.textContent = theme === "dark" ? "Light mode" : "Dark mode";
-      localStorage.setItem("theme", theme);
-    }
-
-    setTheme(localStorage.getItem("theme") || "light");
-
-    btn.addEventListener("click", function () {
-      const current = page.getAttribute("data-theme");
-      setTheme(current === "dark" ? "light" : "dark");
-    });
-  </script>
 <body>
   <main class="wrap">
         <button class="theme-btn" id="themeBtn">Dark mode</button>
@@ -161,5 +144,22 @@
 
   </main>
   <footer class="wrap">Built by Ethan Rajeswaran and hosted on GitHub Pages.</footer>
+   <script>
+    const btn = document.getElementById("themeBtn");
+    const page = document.documentElement;
+
+    function setTheme(theme) {
+      page.setAttribute("data-theme", theme);
+      btn.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+      localStorage.setItem("theme", theme);
+    }
+
+    setTheme(localStorage.getItem("theme") || "light");
+
+    btn.addEventListener("click", function () {
+      const current = page.getAttribute("data-theme");
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+  </script>
 </body>
 </html>
