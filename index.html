@@ -16,6 +16,20 @@
       --mark: #E8B21E;    /* viewfinder / registration marks */
       --rule: #C9CEC6;    /* thin lines */
     }
+        [data-theme="dark"] {
+      --paper: #141A21;
+      --ink: #E6E9E4;
+      --muted: #9AA5B1;
+      --teal: #6FB7BD;
+      --rule: #2C3540;
+    }
+    .theme-btn {
+      float: right; margin-top: 1.25rem;
+      font: inherit; font-size: 0.95rem;
+      background: none; color: var(--ink);
+      border: 1px solid var(--rule); border-radius: 6px;
+      padding: 0.35rem 0.8rem; cursor: pointer;
+    }
     * { box-sizing: border-box; margin: 0; }
     body {
       background: var(--paper);
@@ -76,8 +90,26 @@
     }
   </style>
 </head>
+    <script>
+    const btn = document.getElementById("themeBtn");
+    const page = document.documentElement;
+
+    function setTheme(theme) {
+      page.setAttribute("data-theme", theme);
+      btn.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+      localStorage.setItem("theme", theme);
+    }
+
+    setTheme(localStorage.getItem("theme") || "light");
+
+    btn.addEventListener("click", function () {
+      const current = page.getAttribute("data-theme");
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+  </script>
 <body>
   <main class="wrap">
+        <button class="theme-btn" id="themeBtn">Dark mode</button>
 
     <!-- HERO: your name and one-line intro -->
     <header class="hero">
